@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".privacypage"
+    android:background="#B8E3E9"
+    android:padding="0dp">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/profiletoolbar"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:background="#0B2E33"
+        android:elevation="4dp"
+        android:paddingTop="34dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Privacy Policy"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Scrollable Terms -->
+    <ScrollView
+        android:id="@+id/termsScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/profiletoolbar"
+        app:layout_constraintBottom_toTopOf="@+id/checkbox1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/termsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@color/white"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:backgroundTint="#B8E3E9"
+            android:lineSpacingExtra="8dp"
+            android:text="Please read the following Terms and Conditions:\n\n
+1. You agree not to misuse the application or engage in harmful activities.\n
+2. Your personal data will be handled according to our Privacy Policy.\n
+3. The app content is protected by copyright and may not be redistributed.\n
+4. The app may update automatically without prior notice.\n
+5. Continued use of the app means you accept these terms." />
+    </ScrollView>
+
+    <!-- Checkbox 1 -->
+    <CheckBox
+        android:id="@+id/checkbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I accept the Terms and Conditions"
+        app:layout_constraintTop_toBottomOf="@+id/termsScrollView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" />
+
+    <!-- Checkbox 2 -->
+    <CheckBox
+        android:id="@+id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I accept the Privacy Policy"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" />
+
+    <!-- Continue Button in Bottom Right -->
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue..."
+        android:textColorHint="@color/white"
+        android:textSize="18dp"
+        android:backgroundTint="#4F7C82"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox2"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
